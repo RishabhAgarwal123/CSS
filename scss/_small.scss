@@ -1,0 +1,184 @@
+/* Prevent adjsutments of the font size after orientation changes in IE 10 on windows phone and on ios */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+/* Apply a natural box model layout model to all elements*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// Overall styling for the body of the document
+body {
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  font-size: 16px;
+}
+
+// header
+// div#headerWrapper {
+//   background-color: $primaryColor;
+// }
+header {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  padding: 1rem $padding;
+
+  form {
+    float: right;
+  }
+  form input {
+    width: 6rem;
+    border-radius: 10px;
+    margin-right: 2%;
+    padding: 0.2rem;
+    border: none;
+    transition: width 0.5s;
+  }
+  form input:focus {
+    width: 8rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: $normalWeight;
+  }
+  h2 {
+    font-size: 1.05rem;
+    font-weight: $normalWeight;
+  }
+}
+
+// overall styling for the nacvigation of the page
+// div#navWrapper {
+//   background-color: $secondaryColor;
+//   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+// }
+nav {
+  background-color: $secondaryColor;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  ul li {
+    float: left;
+    width: 25%;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  ul li:last-child {
+    border-right: none;
+  }
+  ul li a {
+    display: block;
+    text-align: center;
+    font-weight: $boldWeight;
+    padding: 0.5rem 0;
+    color: $primaryColor;
+    text-decoration: none;
+    transition: background 0.75s ease, color 0.75s ease;
+  }
+  ul li.active a {
+    background-color: darken($secondaryColor, 10%);
+  }
+  ul li a:hover {
+    color: $secondaryColor;
+    background-color: $primaryColor;
+  }
+}
+// overall styling for the main of the page
+main {
+  figure.banner {
+    width: 100%;
+  }
+  figure.banner img {
+    width: 100%;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0 $padding;
+    color: $primaryColor;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin: 0.75rem 0 0 $padding;
+    color: lighten($color: $primaryColor, $amount: 10%);
+  }
+  h3 {
+    font-size: 1.2rem;
+    color: lighten($color: $primaryColor, $amount: 20%);
+  }
+  p {
+    line-height: 130%;
+    color: $font-color;
+  }
+  hr.fadeAway {
+    background: linear-gradient(
+      to right,
+      rgba(66, 78, 100, 1) 0%,
+      rgba(66, 78, 100, 0.01) 100%
+    );
+    height: 2px;
+    border: none;
+    margin: 0 $padding;
+  }
+  figure.photo {
+    width: 100% - $paddingDouble;
+    margin: 0.5rem $padding;
+  }
+  figure.photo img {
+    width: 100%;
+  }
+  figure.photo figcaption {
+    text-align: center;
+    color: $primaryColor;
+  }
+
+  div.blog article {
+    margin: 0.5rem $padding;
+    width: 100 - $paddingDouble;
+  }
+
+  div.pop {
+    background-color: $accent;
+    text-align: center;
+    clear: both;
+    padding: 1rem 0;
+    .title {
+      font-size: 2.5rem;
+    }
+    .subtitle {
+      font-size: 2rem;
+      font-weight: $boldWeight;
+    }
+    .copy {
+      padding: 0.5rem 0;
+    }
+    .copy span {
+      font-size: 3rem;
+      color: $primaryColor;
+      font-weight: $boldWeight;
+    }
+  }
+}
+// overall styling for the footer of the page
+// div#footerWrapper {
+//   background-color: $primaryColor;
+// }
+footer {
+  width: 100%;
+  background-color: $primaryColor;
+  p {
+    text-align: center;
+    color: $secondaryColor;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+  p a {
+    color: $secondaryColor;
+  }
+}
+
+// Force element not to collapse
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
